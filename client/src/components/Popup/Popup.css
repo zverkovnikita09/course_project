@@ -1,0 +1,38 @@
+.overlay {
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 5000;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.07s 0.07s, visibility 0s 0.15s;
+}
+
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+  transition: 0.1s;
+
+  .content {
+    opacity: 1;
+    transition: 0.15s;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  position: relative;
+  transform: translateY(-3%);
+  transition: 0.15s;
+  transition-delay: 0s;
+  opacity: 0;
+}
